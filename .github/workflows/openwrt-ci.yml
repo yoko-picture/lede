@@ -75,16 +75,16 @@ jobs:
           cat >> .config <<EOF
           CONFIG_TARGET_IMAGES_GZIP=y
           CONFIG_KERNEL_BUILD_USER="OpenWrt-CI"
-          CONFIG_KERNEL_BUILD_DOMAIN="Azure"
+          CO          #
           # Automatically generated file; DO NOT EDIT.
           # OpenWrt Configuration
           #
-          CONFIG_MODULES=y
+          
           CONFIG_HAVE_DOT_CONFIG=y
           # CONFIG_TARGET_sunxi is not set
           # CONFIG_TARGET_apm821xx is not set
           # CONFIG_TARGET_ath25 is not set
-          # CONFIG_TARGET_ath79 is not set
+          # CONFIG_TARCONFIG_MODULES=yGET_ath79 is not set
           # CONFIG_TARGET_bcm27xx is not set
           # CONFIG_TARGET_bcm53xx is not set
           # CONFIG_TARGET_bcm47xx is not set
@@ -134,7 +134,7 @@ jobs:
           CONFIG_TARGET_ARCH_PACKAGES="x86_64"
           CONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe"
           CONFIG_CPU_TYPE=" "
-          CONFIG_LINUX_5_4=y
+          CONFIG_LINUX_5_10=y
           CONFIG_DEFAULT_ath10k-firmware-qca9888=y
           CONFIG_DEFAULT_ath10k-firmware-qca988x=y
           CONFIG_DEFAULT_ath10k-firmware-qca9984=y
@@ -304,13 +304,13 @@ jobs:
           # CONFIG_VDI_IMAGES is not set
           # CONFIG_VHDX_IMAGES is not set
           # CONFIG_VMDK_IMAGES is not set
-          CONFIG_TARGET_IMAGES_GZIP=y
+          # CONFIG_TARGET_IMAGES_GZIP is not set
 
           #
           # Image Options
           #
-          CONFIG_TARGET_KERNEL_PARTSIZE=200
-          CONFIG_TARGET_ROOTFS_PARTSIZE=300000
+          CONFIG_TARGET_KERNEL_PARTSIZE=300
+          CONFIG_TARGET_ROOTFS_PARTSIZE=310000
           CONFIG_TARGET_ROOTFS_PARTNAME=""
           # end of Target Images
 
@@ -330,7 +330,7 @@ jobs:
           #
           # General build options
           #
-          # CONFIG_TESTING_KERNEL is not set
+          CONFIG_TESTING_KERNEL=y
           CONFIG_DISPLAY_SUPPORT=y
           # CONFIG_BUILD_PATENTED is not set
           # CONFIG_BUILD_NLS is not set
@@ -1652,7 +1652,7 @@ jobs:
           CONFIG_PACKAGE_ca-bundle=y
           # CONFIG_PACKAGE_ca-certificates is not set
           CONFIG_PACKAGE_dnsmasq=y
-          CONFIG_PACKAGE_dnsmasq-dhcpv6=y
+          # CONFIG_PACKAGE_dnsmasq-dhcpv6 is not set
           CONFIG_PACKAGE_dnsmasq-full=y
           CONFIG_PACKAGE_dnsmasq_full_dhcp=y
           CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
@@ -1883,10 +1883,10 @@ jobs:
           # CONFIG_PACKAGE_aircard-pcmcia-firmware is not set
           # CONFIG_PACKAGE_amd64-microcode is not set
           # CONFIG_PACKAGE_amdgpu-firmware is not set
-          # CONFIG_PACKAGE_ar3k-firmware is not set
-          # CONFIG_PACKAGE_ath10k-board-qca4019 is not set
-          # CONFIG_PACKAGE_ath10k-board-qca9377 is not set
-          # CONFIG_PACKAGE_ath10k-board-qca9887 is not set
+          CONFIG_PACKAGE_ar3k-firmware=y
+          CONFIG_PACKAGE_ath10k-board-qca4019=y
+          CONFIG_PACKAGE_ath10k-board-qca9377=y
+          CONFIG_PACKAGE_ath10k-board-qca9887=y
           CONFIG_PACKAGE_ath10k-board-qca9888=y
           CONFIG_PACKAGE_ath10k-board-qca988x=y
           CONFIG_PACKAGE_ath10k-board-qca9984=y
@@ -2113,7 +2113,7 @@ jobs:
           CONFIG_PACKAGE_kmod-crypto-deflate=y
           CONFIG_PACKAGE_kmod-crypto-des=y
           CONFIG_PACKAGE_kmod-crypto-ecb=y
-          # CONFIG_PACKAGE_kmod-crypto-ecdh is not set
+          CONFIG_PACKAGE_kmod-crypto-ecdh=y
           CONFIG_PACKAGE_kmod-crypto-echainiv=y
           # CONFIG_PACKAGE_kmod-crypto-fcrypt is not set
           CONFIG_PACKAGE_kmod-crypto-gcm=y
@@ -2124,7 +2124,7 @@ jobs:
           # CONFIG_PACKAGE_kmod-crypto-hw-ccp is not set
           # CONFIG_PACKAGE_kmod-crypto-hw-hifn-795x is not set
           # CONFIG_PACKAGE_kmod-crypto-hw-padlock is not set
-          # CONFIG_PACKAGE_kmod-crypto-kpp is not set
+          CONFIG_PACKAGE_kmod-crypto-kpp=y
           CONFIG_PACKAGE_kmod-crypto-manager=y
           # CONFIG_PACKAGE_kmod-crypto-md4 is not set
           CONFIG_PACKAGE_kmod-crypto-md5=y
@@ -2497,6 +2497,7 @@ jobs:
           CONFIG_PACKAGE_kmod-ixgbevf=y
           CONFIG_PACKAGE_kmod-libphy=y
           CONFIG_PACKAGE_kmod-macvlan=y
+          CONFIG_PACKAGE_kmod-mdio-devres=y
           # CONFIG_PACKAGE_kmod-mdio-gpio is not set
           CONFIG_PACKAGE_kmod-mii=y
           CONFIG_PACKAGE_kmod-mlx4-core=y
@@ -2595,10 +2596,6 @@ jobs:
           # CONFIG_PACKAGE_kmod-pppol2tp is not set
           CONFIG_PACKAGE_kmod-pppox=y
           # CONFIG_PACKAGE_kmod-pptp is not set
-          # CONFIG_PACKAGE_kmod-qca-nss-ecm-noload is not set
-          # CONFIG_PACKAGE_kmod-qca-nss-ecm-premium is not set
-          # CONFIG_PACKAGE_kmod-qca-nss-ecm-premium-noload is not set
-          # CONFIG_PACKAGE_kmod-qca-nss-ecm-standard is not set
           # CONFIG_PACKAGE_kmod-sched is not set
           # CONFIG_PACKAGE_kmod-sched-act-vlan is not set
           # CONFIG_PACKAGE_kmod-sched-bpf is not set
@@ -2629,9 +2626,9 @@ jobs:
           # Other modules
           #
           # CONFIG_PACKAGE_kmod-6lowpan is not set
-          # CONFIG_PACKAGE_kmod-ath3k is not set
+          CONFIG_PACKAGE_kmod-ath3k=y
           # CONFIG_PACKAGE_kmod-bcma is not set
-          # CONFIG_PACKAGE_kmod-bluetooth is not set
+          CONFIG_PACKAGE_kmod-bluetooth=y
           # CONFIG_PACKAGE_kmod-bluetooth-6lowpan is not set
           # CONFIG_PACKAGE_kmod-btmrvl is not set
           CONFIG_PACKAGE_kmod-button-hotplug=y
@@ -2669,6 +2666,7 @@ jobs:
           # CONFIG_PACKAGE_kmod-pps-ldisc is not set
           CONFIG_PACKAGE_kmod-ptp=y
           # CONFIG_PACKAGE_kmod-random-core is not set
+          CONFIG_PACKAGE_kmod-regmap-core=y
           # CONFIG_PACKAGE_kmod-rtc-ds1307 is not set
           # CONFIG_PACKAGE_kmod-rtc-ds1374 is not set
           # CONFIG_PACKAGE_kmod-rtc-ds1672 is not set
@@ -2868,9 +2866,8 @@ jobs:
           # CONFIG_PACKAGE_kmod-ath10k-ct-smallbuffers is not set
           # CONFIG_PACKAGE_kmod-ath11k is not set
           CONFIG_PACKAGE_kmod-ath5k=y
-          CONFIG_PACKAGE_kmod-ath6kl=y
-          CONFIG_PACKAGE_kmod-ath6kl-sdio=y
-          CONFIG_PACKAGE_kmod-ath6kl-usb=y
+          # CONFIG_PACKAGE_kmod-ath6kl-sdio is not set
+          # CONFIG_PACKAGE_kmod-ath6kl-usb is not set
           CONFIG_PACKAGE_kmod-ath9k=y
           # CONFIG_ATH9K_HWRNG is not set
           CONFIG_ATH9K_SUPPORT_PCOEM=y
@@ -4065,8 +4062,7 @@ jobs:
           CONFIG_PACKAGE_libblobmsg-json=y
           # CONFIG_PACKAGE_libbpf is not set
           # CONFIG_PACKAGE_libbsd is not set
-          CONFIG_PACKAGE_libcap=y
-          # CONFIG_PACKAGE_libcap-bin is not set
+          # CONFIG_PACKAGE_libcap is not set
           # CONFIG_PACKAGE_libcap-ng is not set
           # CONFIG_PACKAGE_libcares is not set
           # CONFIG_PACKAGE_libcbor is not set
@@ -4396,14 +4392,14 @@ jobs:
           CONFIG_PACKAGE_libustream-openssl=y
           # CONFIG_PACKAGE_libustream-wolfssl is not set
           CONFIG_PACKAGE_libuuid=y
-          CONFIG_PACKAGE_libuv=y
+          # CONFIG_PACKAGE_libuv is not set
           # CONFIG_PACKAGE_libuwifi is not set
           # CONFIG_PACKAGE_libv4l is not set
           # CONFIG_PACKAGE_libvorbis is not set
           # CONFIG_PACKAGE_libvorbisidec is not set
           # CONFIG_PACKAGE_libvpx is not set
           # CONFIG_PACKAGE_libwebp is not set
-          CONFIG_PACKAGE_libwebsockets-full=y
+          # CONFIG_PACKAGE_libwebsockets-full is not set
           # CONFIG_PACKAGE_libwebsockets-mbedtls is not set
           # CONFIG_PACKAGE_libwebsockets-openssl is not set
           # CONFIG_PACKAGE_libwrap is not set
@@ -4525,7 +4521,7 @@ jobs:
           # 3. Applications
           #
           CONFIG_PACKAGE_luci-app-accesscontrol=y
-          CONFIG_PACKAGE_luci-app-adblock=y
+          # CONFIG_PACKAGE_luci-app-adblock is not set
           CONFIG_PACKAGE_luci-app-adbyby-plus=y
           # CONFIG_PACKAGE_luci-app-advanced-reboot is not set
           # CONFIG_PACKAGE_luci-app-ahcp is not set
@@ -4563,7 +4559,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-familycloud is not set
           CONFIG_PACKAGE_luci-app-filetransfer=y
           CONFIG_PACKAGE_luci-app-firewall=y
-          # CONFIG_PACKAGE_luci-app-frpc is not set
+          CONFIG_PACKAGE_luci-app-frpc=y
           # CONFIG_PACKAGE_luci-app-frps is not set
           # CONFIG_PACKAGE_luci-app-fwknopd is not set
           # CONFIG_PACKAGE_luci-app-guest-wifi is not set
@@ -4592,7 +4588,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-olsr is not set
           # CONFIG_PACKAGE_luci-app-olsr-services is not set
           # CONFIG_PACKAGE_luci-app-olsr-viz is not set
-          CONFIG_PACKAGE_luci-app-openvpn=y
+          # CONFIG_PACKAGE_luci-app-openvpn is not set
           # CONFIG_PACKAGE_luci-app-openvpn-server is not set
           # CONFIG_PACKAGE_luci-app-p910nd is not set
           # CONFIG_PACKAGE_luci-app-pagekitec is not set
@@ -4614,7 +4610,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-rp-pppoe-server is not set
           CONFIG_PACKAGE_luci-app-samba=y
           # CONFIG_PACKAGE_luci-app-samba4 is not set
-          CONFIG_PACKAGE_luci-app-shadowsocks-libev=y
+          # CONFIG_PACKAGE_luci-app-shadowsocks-libev is not set
           # CONFIG_PACKAGE_luci-app-shairplay is not set
           # CONFIG_PACKAGE_luci-app-siitwizard is not set
           # CONFIG_PACKAGE_luci-app-simple-adblock is not set
@@ -4628,7 +4624,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-tinyproxy is not set
           # CONFIG_PACKAGE_luci-app-transmission is not set
           # CONFIG_PACKAGE_luci-app-travelmate is not set
-          CONFIG_PACKAGE_luci-app-ttyd=y
+          # CONFIG_PACKAGE_luci-app-ttyd is not set
           CONFIG_PACKAGE_luci-app-turboacc=y
           CONFIG_PACKAGE_TURBOACC_INCLUDE_SHORTCUT_FE=y
           CONFIG_PACKAGE_TURBOACC_INCLUDE_BBR_CCA=y
@@ -4706,13 +4702,6 @@ jobs:
 
           CONFIG_PACKAGE_default-settings=y
           CONFIG_PACKAGE_luci-i18n-accesscontrol-zh-cn=y
-          # CONFIG_PACKAGE_luci-i18n-adblock-it is not set
-          # CONFIG_PACKAGE_luci-i18n-adblock-ja is not set
-          # CONFIG_PACKAGE_luci-i18n-adblock-pt-br is not set
-          # CONFIG_PACKAGE_luci-i18n-adblock-ru is not set
-          # CONFIG_PACKAGE_luci-i18n-adblock-sv is not set
-          CONFIG_PACKAGE_luci-i18n-adblock-zh-cn=y
-          # CONFIG_PACKAGE_luci-i18n-adblock-zh-tw is not set
           CONFIG_PACKAGE_luci-i18n-adbyby-plus-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-arpbind-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-autoreboot-zh-cn=y
@@ -4801,35 +4790,11 @@ jobs:
           # CONFIG_PACKAGE_luci-i18n-firewall-vi is not set
           CONFIG_PACKAGE_luci-i18n-firewall-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-firewall-zh-tw is not set
+          CONFIG_PACKAGE_luci-i18n-frpc-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-ipsec-vpnd-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-nlbwmon-ja is not set
           # CONFIG_PACKAGE_luci-i18n-nlbwmon-ru is not set
           CONFIG_PACKAGE_luci-i18n-nlbwmon-zh-cn=y
-          # CONFIG_PACKAGE_luci-i18n-openvpn-ca is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-cs is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-de is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-el is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-en is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-es is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-fr is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-he is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-hu is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-it is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-ja is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-ms is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-no is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-pl is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-pt is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-pt-br is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-ro is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-ru is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-sk is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-sv is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-tr is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-uk is not set
-          # CONFIG_PACKAGE_luci-i18n-openvpn-vi is not set
-          CONFIG_PACKAGE_luci-i18n-openvpn-zh-cn=y
-          # CONFIG_PACKAGE_luci-i18n-openvpn-zh-tw is not set
           CONFIG_PACKAGE_luci-i18n-qbittorrent-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-ramfree-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-samba-ca is not set
@@ -4857,7 +4822,6 @@ jobs:
           # CONFIG_PACKAGE_luci-i18n-samba-vi is not set
           CONFIG_PACKAGE_luci-i18n-samba-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-samba-zh-tw is not set
-          CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-turboacc-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-upnp-ca is not set
           # CONFIG_PACKAGE_luci-i18n-upnp-cs is not set
@@ -4972,7 +4936,7 @@ jobs:
           # end of Streaming
 
           # CONFIG_PACKAGE_UnblockNeteaseMusic is not set
-          CONFIG_PACKAGE_UnblockNeteaseMusic-Go=y
+          # CONFIG_PACKAGE_UnblockNeteaseMusic-Go is not set
           # CONFIG_UNBLOCKNETEASEMUSIC_GO_COMPRESS_GOPROXY is not set
           CONFIG_UNBLOCKNETEASEMUSIC_GO_COMPRESS_UPX=y
           # CONFIG_PACKAGE_ffmpeg is not set
@@ -5773,7 +5737,7 @@ jobs:
           # CONFIG_PACKAGE_e2guardian is not set
           # CONFIG_PACKAGE_etebase is not set
           # CONFIG_PACKAGE_freshclam is not set
-          # CONFIG_PACKAGE_frpc is not set
+          CONFIG_PACKAGE_frpc=y
           # CONFIG_PACKAGE_frps is not set
           # CONFIG_PACKAGE_gateway-go is not set
           # CONFIG_PACKAGE_gunicorn3 is not set
@@ -5891,10 +5855,10 @@ jobs:
           # CONFIG_PACKAGE_UDPspeeder is not set
           # CONFIG_PACKAGE_acme is not set
           # CONFIG_PACKAGE_acme-dnsapi is not set
-          CONFIG_PACKAGE_adblock=y
+          # CONFIG_PACKAGE_adblock is not set
           CONFIG_PACKAGE_adbyby=y
           # CONFIG_PACKAGE_addrwatch is not set
-          CONFIG_PACKAGE_adguardhome=y
+          # CONFIG_PACKAGE_adguardhome is not set
           # CONFIG_PACKAGE_ahcpd is not set
           # CONFIG_PACKAGE_alfred is not set
           # CONFIG_PACKAGE_apcupsd is not set
@@ -6433,7 +6397,7 @@ jobs:
           # CONFIG_PACKAGE_setterm is not set
           # CONFIG_PACKAGE_tio is not set
           # CONFIG_PACKAGE_tmux is not set
-          CONFIG_PACKAGE_ttyd=y
+          # CONFIG_PACKAGE_ttyd is not set
           # CONFIG_PACKAGE_wall is not set
           # end of Terminal
 
@@ -6646,7 +6610,7 @@ jobs:
           # CONFIG_PACKAGE_coreutils-shred is not set
           # CONFIG_PACKAGE_coreutils-shuf is not set
           # CONFIG_PACKAGE_coreutils-sleep is not set
-          CONFIG_PACKAGE_coreutils-sort=y
+          # CONFIG_PACKAGE_coreutils-sort is not set
           # CONFIG_PACKAGE_coreutils-split is not set
           # CONFIG_PACKAGE_coreutils-stat is not set
           # CONFIG_PACKAGE_coreutils-stdbuf is not set
@@ -6939,9 +6903,7 @@ jobs:
           # CONFIG_PACKAGE_fontconfig is not set
           # end of Font-Utils
           # end of Xorg
-
-          
-          
+NFIG_KERNEL_BUILD_DOMAIN="Azure"
           
           
           
@@ -6958,13 +6920,13 @@ jobs:
 
       - name: Make download
         run: |
-          make download -j8 || make download -j8 V=s
+          make download -j8 || make download -j1 V=s
           rm -rf $(find ./dl/ -size -1024c)
           df -h
 
       - name: Compile firmware
         run: |
-          make -j$(nproc) || make -j8 V=s
+          make -j$(nproc) || make -j1 V=s
           echo "======================="
           echo "Space usage:"
           echo "======================="
@@ -7005,7 +6967,7 @@ jobs:
         if: github.event == 'release'
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.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 }}
+          repo_token: ${{ secrets.YOURTOKEN }}
           file: ./artifact/firmware/*
           tag: ${{ github.ref }}
           file_glob: true
