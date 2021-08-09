@@ -75,16 +75,16 @@ jobs:
           cat >> .config <<EOF
           CONFIG_TARGET_IMAGES_GZIP=y
           CONFIG_KERNEL_BUILD_USER="OpenWrt-CI"
-          CO          #
+          CONFIG_KERNEL_BUILD_DOMAIN="Azure"
           # Automatically generated file; DO NOT EDIT.
           # OpenWrt Configuration
           #
-          
+          CONFIG_MODULES=y
           CONFIG_HAVE_DOT_CONFIG=y
           # CONFIG_TARGET_sunxi is not set
           # CONFIG_TARGET_apm821xx is not set
           # CONFIG_TARGET_ath25 is not set
-          # CONFIG_TARCONFIG_MODULES=yGET_ath79 is not set
+          # CONFIG_TARGET_ath79 is not set
           # CONFIG_TARGET_bcm27xx is not set
           # CONFIG_TARGET_bcm53xx is not set
           # CONFIG_TARGET_bcm47xx is not set
@@ -6903,9 +6903,7 @@ jobs:
           # CONFIG_PACKAGE_fontconfig is not set
           # end of Font-Utils
           # end of Xorg
-NFIG_KERNEL_BUILD_DOMAIN="Azure"
-          
-          
+
           
           
           
@@ -6920,13 +6918,13 @@ NFIG_KERNEL_BUILD_DOMAIN="Azure"
 
       - name: Make download
         run: |
-          make download -j8 || make download -j8 V=s
+          make download -j8 || make download -j1 V=s
           rm -rf $(find ./dl/ -size -1024c)
           df -h
 
       - name: Compile firmware
         run: |
-          make -j$(nproc) || make -j8 V=s
+          make -j$(nproc) || make -j1 V=s
           echo "======================="
           echo "Space usage:"
           echo "======================="
@@ -6967,7 +6965,7 @@ NFIG_KERNEL_BUILD_DOMAIN="Azure"
         if: github.event == 'release'
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.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 }}
+          repo_token: ${{ secrets.YOURTOKEN }}
           file: ./artifact/firmware/*
           tag: ${{ github.ref }}
           file_glob: true
