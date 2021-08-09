@@ -6918,13 +6918,13 @@ jobs:
 
       - name: Make download
         run: |
-          make download -j8 || make download -j1 V=s
+          make download -j8 || make download -j8 V=s
           rm -rf $(find ./dl/ -size -1024c)
           df -h
 
       - name: Compile firmware
         run: |
-          make -j$(nproc) || make -j1 V=s
+          make -j$(nproc) || make -j8 V=s
           echo "======================="
           echo "Space usage:"
           echo "======================="
@@ -6965,7 +6965,7 @@ jobs:
         if: github.event == 'release'
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.YOURTOKEN }}
+          repo_token: ${{ secrets.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 }}
           file: ./artifact/firmware/*
           tag: ${{ github.ref }}
           file_glob: true
