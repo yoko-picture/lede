@@ -76,6 +76,7 @@ jobs:
           CONFIG_TARGET_IMAGES_GZIP=y
           CONFIG_KERNEL_BUILD_USER="OpenWrt-CI"
           CONFIG_KERNEL_BUILD_DOMAIN="Azure"
+                    #
           # Automatically generated file; DO NOT EDIT.
           # OpenWrt Configuration
           #
@@ -1651,7 +1652,7 @@ jobs:
           # CONFIG_PACKAGE_busybox-selinux is not set
           CONFIG_PACKAGE_ca-bundle=y
           # CONFIG_PACKAGE_ca-certificates is not set
-          CONFIG_PACKAGE_dnsmasq=y
+          # CONFIG_PACKAGE_dnsmasq is not set
           # CONFIG_PACKAGE_dnsmasq-dhcpv6 is not set
           CONFIG_PACKAGE_dnsmasq-full=y
           CONFIG_PACKAGE_dnsmasq_full_dhcp=y
@@ -6918,13 +6919,13 @@ jobs:
 
       - name: Make download
         run: |
-          make download -j8 || make download -j8 V=s
+          make download -j8 || make download -j3 V=s
           rm -rf $(find ./dl/ -size -1024c)
           df -h
 
       - name: Compile firmware
         run: |
-          make -j$(nproc) || make -j8 V=s
+          make -j$(nproc) || make -j4 V=s
           echo "======================="
           echo "Space usage:"
           echo "======================="
@@ -6965,7 +6966,7 @@ jobs:
         if: github.event == 'release'
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.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 }}
+          repo_token: ${{ secrets.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 }}
           file: ./artifact/firmware/*
           tag: ${{ github.ref }}
           file_glob: true
