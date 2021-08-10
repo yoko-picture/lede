@@ -135,7 +135,7 @@ jobs:
           CONFIG_TARGET_ARCH_PACKAGES="x86_64"
           CONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe"
           CONFIG_CPU_TYPE=" "
-          CONFIG_LINUX_5_10=y
+          CONFIG_LINUX_5_4=y
           CONFIG_DEFAULT_ath10k-firmware-qca9888=y
           CONFIG_DEFAULT_ath10k-firmware-qca988x=y
           CONFIG_DEFAULT_ath10k-firmware-qca9984=y
@@ -304,7 +304,7 @@ jobs:
           # CONFIG_QCOW2_IMAGES is not set
           # CONFIG_VDI_IMAGES is not set
           # CONFIG_VHDX_IMAGES is not set
-          # CONFIG_VMDK_IMAGES is not set
+          CONFIG_VMDK_IMAGES=y
           # CONFIG_TARGET_IMAGES_GZIP is not set
 
           #
@@ -331,7 +331,7 @@ jobs:
           #
           # General build options
           #
-          CONFIG_TESTING_KERNEL=y
+          # CONFIG_TESTING_KERNEL is not set
           CONFIG_DISPLAY_SUPPORT=y
           # CONFIG_BUILD_PATENTED is not set
           # CONFIG_BUILD_NLS is not set
@@ -1656,7 +1656,7 @@ jobs:
           # CONFIG_PACKAGE_dnsmasq-dhcpv6 is not set
           CONFIG_PACKAGE_dnsmasq-full=y
           CONFIG_PACKAGE_dnsmasq_full_dhcp=y
-          CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+          # CONFIG_PACKAGE_dnsmasq_full_dhcpv6 is not set
           # CONFIG_PACKAGE_dnsmasq_full_dnssec is not set
           # CONFIG_PACKAGE_dnsmasq_full_auth is not set
           CONFIG_PACKAGE_dnsmasq_full_ipset=y
@@ -1884,10 +1884,10 @@ jobs:
           # CONFIG_PACKAGE_aircard-pcmcia-firmware is not set
           # CONFIG_PACKAGE_amd64-microcode is not set
           # CONFIG_PACKAGE_amdgpu-firmware is not set
-          CONFIG_PACKAGE_ar3k-firmware=y
-          CONFIG_PACKAGE_ath10k-board-qca4019=y
-          CONFIG_PACKAGE_ath10k-board-qca9377=y
-          CONFIG_PACKAGE_ath10k-board-qca9887=y
+          # CONFIG_PACKAGE_ar3k-firmware is not set
+          # CONFIG_PACKAGE_ath10k-board-qca4019 is not set
+          # CONFIG_PACKAGE_ath10k-board-qca9377 is not set
+          # CONFIG_PACKAGE_ath10k-board-qca9887 is not set
           CONFIG_PACKAGE_ath10k-board-qca9888=y
           CONFIG_PACKAGE_ath10k-board-qca988x=y
           CONFIG_PACKAGE_ath10k-board-qca9984=y
@@ -2114,7 +2114,7 @@ jobs:
           CONFIG_PACKAGE_kmod-crypto-deflate=y
           CONFIG_PACKAGE_kmod-crypto-des=y
           CONFIG_PACKAGE_kmod-crypto-ecb=y
-          CONFIG_PACKAGE_kmod-crypto-ecdh=y
+          # CONFIG_PACKAGE_kmod-crypto-ecdh is not set
           CONFIG_PACKAGE_kmod-crypto-echainiv=y
           # CONFIG_PACKAGE_kmod-crypto-fcrypt is not set
           CONFIG_PACKAGE_kmod-crypto-gcm=y
@@ -2125,7 +2125,7 @@ jobs:
           # CONFIG_PACKAGE_kmod-crypto-hw-ccp is not set
           # CONFIG_PACKAGE_kmod-crypto-hw-hifn-795x is not set
           # CONFIG_PACKAGE_kmod-crypto-hw-padlock is not set
-          CONFIG_PACKAGE_kmod-crypto-kpp=y
+          # CONFIG_PACKAGE_kmod-crypto-kpp is not set
           CONFIG_PACKAGE_kmod-crypto-manager=y
           # CONFIG_PACKAGE_kmod-crypto-md4 is not set
           CONFIG_PACKAGE_kmod-crypto-md5=y
@@ -2472,7 +2472,7 @@ jobs:
           CONFIG_PACKAGE_kmod-atl1=y
           CONFIG_PACKAGE_kmod-atl1c=y
           CONFIG_PACKAGE_kmod-atl1e=y
-          CONFIG_PACKAGE_kmod-atl2=y
+          # CONFIG_PACKAGE_kmod-atl2 is not set
           # CONFIG_PACKAGE_kmod-b44 is not set
           # CONFIG_PACKAGE_kmod-be2net is not set
           CONFIG_PACKAGE_kmod-bnx2=y
@@ -2498,7 +2498,6 @@ jobs:
           CONFIG_PACKAGE_kmod-ixgbevf=y
           CONFIG_PACKAGE_kmod-libphy=y
           CONFIG_PACKAGE_kmod-macvlan=y
-          CONFIG_PACKAGE_kmod-mdio-devres=y
           # CONFIG_PACKAGE_kmod-mdio-gpio is not set
           CONFIG_PACKAGE_kmod-mii=y
           CONFIG_PACKAGE_kmod-mlx4-core=y
@@ -2597,6 +2596,10 @@ jobs:
           # CONFIG_PACKAGE_kmod-pppol2tp is not set
           CONFIG_PACKAGE_kmod-pppox=y
           # CONFIG_PACKAGE_kmod-pptp is not set
+          # CONFIG_PACKAGE_kmod-qca-nss-ecm-noload is not set
+          # CONFIG_PACKAGE_kmod-qca-nss-ecm-premium is not set
+          # CONFIG_PACKAGE_kmod-qca-nss-ecm-premium-noload is not set
+          # CONFIG_PACKAGE_kmod-qca-nss-ecm-standard is not set
           # CONFIG_PACKAGE_kmod-sched is not set
           # CONFIG_PACKAGE_kmod-sched-act-vlan is not set
           # CONFIG_PACKAGE_kmod-sched-bpf is not set
@@ -2627,9 +2630,9 @@ jobs:
           # Other modules
           #
           # CONFIG_PACKAGE_kmod-6lowpan is not set
-          CONFIG_PACKAGE_kmod-ath3k=y
+          # CONFIG_PACKAGE_kmod-ath3k is not set
           # CONFIG_PACKAGE_kmod-bcma is not set
-          CONFIG_PACKAGE_kmod-bluetooth=y
+          # CONFIG_PACKAGE_kmod-bluetooth is not set
           # CONFIG_PACKAGE_kmod-bluetooth-6lowpan is not set
           # CONFIG_PACKAGE_kmod-btmrvl is not set
           CONFIG_PACKAGE_kmod-button-hotplug=y
@@ -2667,7 +2670,6 @@ jobs:
           # CONFIG_PACKAGE_kmod-pps-ldisc is not set
           CONFIG_PACKAGE_kmod-ptp=y
           # CONFIG_PACKAGE_kmod-random-core is not set
-          CONFIG_PACKAGE_kmod-regmap-core=y
           # CONFIG_PACKAGE_kmod-rtc-ds1307 is not set
           # CONFIG_PACKAGE_kmod-rtc-ds1374 is not set
           # CONFIG_PACKAGE_kmod-rtc-ds1672 is not set
@@ -4063,7 +4065,8 @@ jobs:
           CONFIG_PACKAGE_libblobmsg-json=y
           # CONFIG_PACKAGE_libbpf is not set
           # CONFIG_PACKAGE_libbsd is not set
-          # CONFIG_PACKAGE_libcap is not set
+          CONFIG_PACKAGE_libcap=y
+          # CONFIG_PACKAGE_libcap-bin is not set
           # CONFIG_PACKAGE_libcap-ng is not set
           # CONFIG_PACKAGE_libcares is not set
           # CONFIG_PACKAGE_libcbor is not set
@@ -4393,14 +4396,14 @@ jobs:
           CONFIG_PACKAGE_libustream-openssl=y
           # CONFIG_PACKAGE_libustream-wolfssl is not set
           CONFIG_PACKAGE_libuuid=y
-          # CONFIG_PACKAGE_libuv is not set
+          CONFIG_PACKAGE_libuv=y
           # CONFIG_PACKAGE_libuwifi is not set
           # CONFIG_PACKAGE_libv4l is not set
           # CONFIG_PACKAGE_libvorbis is not set
           # CONFIG_PACKAGE_libvorbisidec is not set
           # CONFIG_PACKAGE_libvpx is not set
           # CONFIG_PACKAGE_libwebp is not set
-          # CONFIG_PACKAGE_libwebsockets-full is not set
+          CONFIG_PACKAGE_libwebsockets-full=y
           # CONFIG_PACKAGE_libwebsockets-mbedtls is not set
           # CONFIG_PACKAGE_libwebsockets-openssl is not set
           # CONFIG_PACKAGE_libwrap is not set
@@ -4625,7 +4628,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-tinyproxy is not set
           # CONFIG_PACKAGE_luci-app-transmission is not set
           # CONFIG_PACKAGE_luci-app-travelmate is not set
-          # CONFIG_PACKAGE_luci-app-ttyd is not set
+          CONFIG_PACKAGE_luci-app-ttyd=y
           CONFIG_PACKAGE_luci-app-turboacc=y
           CONFIG_PACKAGE_TURBOACC_INCLUDE_SHORTCUT_FE=y
           CONFIG_PACKAGE_TURBOACC_INCLUDE_BBR_CCA=y
@@ -4633,8 +4636,8 @@ jobs:
           CONFIG_PACKAGE_TURBOACC_INCLUDE_DNSPROXY=y
           # CONFIG_PACKAGE_luci-app-udpxy is not set
           # CONFIG_PACKAGE_luci-app-uhttpd is not set
-          # CONFIG_PACKAGE_luci-app-unblockmusic is not set
-          # CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go is not set
+          CONFIG_PACKAGE_luci-app-unblockmusic=y
+          CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go=y
           # CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS is not set
           # CONFIG_PACKAGE_luci-app-unbound is not set
           CONFIG_PACKAGE_luci-app-upnp=y
@@ -4823,7 +4826,9 @@ jobs:
           # CONFIG_PACKAGE_luci-i18n-samba-vi is not set
           CONFIG_PACKAGE_luci-i18n-samba-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-samba-zh-tw is not set
+          CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-turboacc-zh-cn=y
+          CONFIG_PACKAGE_luci-i18n-unblockmusic-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-upnp-ca is not set
           # CONFIG_PACKAGE_luci-i18n-upnp-cs is not set
           # CONFIG_PACKAGE_luci-i18n-upnp-de is not set
@@ -4937,7 +4942,7 @@ jobs:
           # end of Streaming
 
           # CONFIG_PACKAGE_UnblockNeteaseMusic is not set
-          # CONFIG_PACKAGE_UnblockNeteaseMusic-Go is not set
+          CONFIG_PACKAGE_UnblockNeteaseMusic-Go=y
           # CONFIG_UNBLOCKNETEASEMUSIC_GO_COMPRESS_GOPROXY is not set
           CONFIG_UNBLOCKNETEASEMUSIC_GO_COMPRESS_UPX=y
           # CONFIG_PACKAGE_ffmpeg is not set
@@ -6398,7 +6403,7 @@ jobs:
           # CONFIG_PACKAGE_setterm is not set
           # CONFIG_PACKAGE_tio is not set
           # CONFIG_PACKAGE_tmux is not set
-          # CONFIG_PACKAGE_ttyd is not set
+          CONFIG_PACKAGE_ttyd=y
           # CONFIG_PACKAGE_wall is not set
           # end of Terminal
 
@@ -6907,7 +6912,6 @@ jobs:
 
           
           
-          
           EOF
 
           #
@@ -6919,13 +6923,13 @@ jobs:
 
       - name: Make download
         run: |
-          make download -j8 || make download -j3 V=s
+          make download -j8 || make download -j1 V=s
           rm -rf $(find ./dl/ -size -1024c)
           df -h
 
       - name: Compile firmware
         run: |
-          make -j$(nproc) || make -j4 V=s
+          make -j$(nproc) || make -j1 V=s
           echo "======================="
           echo "Space usage:"
           echo "======================="
@@ -6966,7 +6970,7 @@ jobs:
         if: github.event == 'release'
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.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 }}
+          repo_token: ${{ secrets.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 }}
           file: ./artifact/firmware/*
           tag: ${{ github.ref }}
           file_glob: true
